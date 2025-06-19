@@ -1,5 +1,6 @@
 import { model, Schema } from "mongoose";
 
+// Create schema
 const userSchema = new Schema<IUser>({
   name: { type: String, required: true, trim: true, min: 3, max: 255 },
   email: {
@@ -30,5 +31,7 @@ const userSchema = new Schema<IUser>({
   },
 });
 
+// Create model
+//User here is your Mongoose model connected to the "user" collection.
 const User = model<IUser>("user", userSchema);
 export default User;

@@ -9,6 +9,7 @@ const createOrder = async (req: Request, res: Response) => {
   if (!checkStock) throw new Error("Insufficient Stock");
   const order = await Order.create(req.body);
 
+  //another approach
   //   const order = new Order(req.body);
   //   const orderStock = await order.checkStock(req.body.mango);
   //   if (!orderStock) throw new Error("Insufficient Stock");
